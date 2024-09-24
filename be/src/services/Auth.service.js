@@ -33,10 +33,8 @@ class AuthService {
                 );
 
                 res.cookie("accessToken", genAccessToken, {
-                    httpOnly: false,
-                    secure: false,
                     path: "/",
-                    sameSite: "lax",
+                    sameSite: "None",
                 });
 
                 await Account.findByIdAndUpdate(
