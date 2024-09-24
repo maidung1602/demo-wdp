@@ -38,7 +38,7 @@ FacebookAuthRoute.get("/success",async (req,res) => {
             httpOnly: false,
             secure: false,
             path: "/",
-            sameSite: "strict",
+            sameSite: "lax",
         });
         const {refreshToken,passwordResetCode,imageStores, ...other} = Account._doc
         return res.status(200).json({message: "Login successfully" , data : other});

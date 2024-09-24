@@ -36,8 +36,9 @@ class AuthService {
                     httpOnly: false,
                     secure: false,
                     path: "/",
-                    sameSite: "strict",
+                    sameSite: "lax",
                 });
+
                 await Account.findByIdAndUpdate(
                     { _id: findAccount.id },
                     { refreshToken: genRefreshToken }
